@@ -29,8 +29,8 @@ app.use(function(req, res, next) {
 })
 
 // ***************************************************************************
-setInterval(function getAvrValsTimer(){ // set 10 second delay between function calls
-    reqpromise('http://10.9.13.51')
+setInterval(function getAvrValsTimer(){ // 10 sekunders fördröjning mellan funktionsanrop
+    reqpromise('http://10.9.13.51') // *** Måste uppdatera beroende på wifi-anslutning ***
         .then(function (avrRestRes) {
             let probeVals = JSON.parse(avrRestRes);
             console.log(probeVals.variables);
@@ -39,7 +39,7 @@ setInterval(function getAvrValsTimer(){ // set 10 second delay between function 
         .catch(function (err) {
             // Skriv err till fil/db
             // writeErrorToDB(JSON.stringifyh(error))
-            console.log('Nada, inget tur gosse');
+            console.log('Nada, inget tur gosse! *** Kontrollera wifi-anslutning ***');
         });
 }, 10000);
 
