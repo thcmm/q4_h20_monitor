@@ -1,0 +1,22 @@
+body {
+    background-color: black;
+}
+
+.row {
+
+}
+
+#dataItemContainer {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.dataItem {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+/* ZingChart */
+.zc-ref {
+  display: none;
+}
