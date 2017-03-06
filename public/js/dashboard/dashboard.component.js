@@ -8,14 +8,14 @@
             },
             templateUrl: '/js/dashboard/dashboard.template.html',
             controller: controller
-        })
+        });
 
-    controller.$inject = ['$http', '$interval']
+    controller.$inject = ['$http', '$interval'];
 
     function controller($http, $interval) {
-        const vm = this
+        const vm = this;
 
-        vm.$onInit = onInit
+        vm.$onInit = onInit;
         // Variabler
         vm.dataReadUpdate = null;
 		vm.probeDataListing = null;
