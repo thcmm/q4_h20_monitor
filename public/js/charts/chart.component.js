@@ -14,7 +14,7 @@
             controller: controller
         });
 
-    controller.$inject = ['$http', '$interval', '$scope'];
+    controller.$inject = ['$http', '$interval','$scope'];
 
     function controller($http, $interval, $scope) {
         const vm = this;
@@ -36,7 +36,7 @@
 
 
 		zingchart.THEME = "dark";
-		$scope.myJson = {
+		vm.myJson = {
 			"type": "area",
 			"plot":{
 				"aspect":"spline"
@@ -50,7 +50,7 @@
 
 
 		/* START: TEST GAUGE */
-		$scope.myConfig = {
+		vm.myConfig = {
 			type: "gauge",
 			globals: {
 				fontSize: 25
@@ -158,13 +158,21 @@
         vm.parseReadingResponse = parseReadingResponse;
         vm.updateUI = updateUI;
         vm.updateChart = updateChart;
+        // vm.myInterval = null;
 
         // TODO Setup 2-way binding between readings and component
         function onInit() {
-			$scope.myJson.series[0].values = [];
-			$scope.myJson.series[1].values = [];
-			$scope.myJson.series[2].values = [];
-			
+        	$scope.$on("$destroy", function(){console.log('Destroy');})
+        	console.log('hello hello',JSON.stringify(vm.myJson.series));
+			vm.myJson.series[0].values = [];
+			vm.myJson.series[1].values = [];
+			vm.myJson.series[2].values = [];
+			console.log('Is Interval Running',vm.myInterval)
+			if (vm.myInterval) {
+				console.log('Clearing Interval');
+				$interval.cancel(vm.myInterval);
+
+			}
             console.log("c:dashboard f:onInit")
             // $http.get('/probedata')
             $http.get('http://10.9.13.51')
@@ -172,12 +180,15 @@
                     let dataItemRead = response.data.variables;
 					parseReadingResponse(dataItemRead);
 				}, function errorCallback(response) {
-					console.log('Err: ', response.data)
+					console.log('Err: ', response.data);
 				});
 				// .catch(console.error);
                 // .then(response => vm.probeDataListing = response.data)
                 // .then(console.log('responseData: ', response.data))
-			$interval(updateChart, 5000);
+
+			vm.myInterval = $interval(updateChart, 5000);
+
+			console.log('Added Interval', vm.myInterval)
         }
 
         function updateUI(){
@@ -198,16 +209,16 @@
 			vm.ec = Math.floor((Math.random() * 200) + 1);
 			vm.do = Math.floor((Math.random() * 150) + 1);
 			vm.gauge1 = Math.floor(Math.random() * ((845-310)+1) + 310);
-			console.log('$scope.myJson.series[0].values: ', $scope.myJson.series[0].values);
-			$scope.myJson.series[0].values.push(vm.ph);
-			$scope.myJson.series[1].values.push(vm.ec);
-			$scope.myJson.series[2].values.push(vm.ec);
+			console.log('$scope.myJson.series[0].values: ', JSON.stringify(vm.myJson.series[0].values));
+			vm.myJson.series[0].values.push(vm.ph);
+			vm.myJson.series[1].values.push(vm.ec);
+			vm.myJson.series[2].values.push(vm.ec);
 			// console.log('gauge1: ', vm.gauge1);
 			// $scope.myConfig.series[0].values = vm.gauge1;
-			$scope.myConfig.series[0].values.pop();
-			$scope.myConfig.series[0].values.push(vm.gauge1);
+			vm.myConfig.series[0].values.pop();
+			vm.myConfig.series[0].values.push(vm.gauge1);
 
-			console.log('$scope.myConfig.series[0].values: ', $scope.myConfig.series[0].values);
+			console.log('$scope.myConfig.series[0].values: ', vm.myConfig.series[0].values);
 		}
 
         function parseReadingResponse(dataItemRead) {
