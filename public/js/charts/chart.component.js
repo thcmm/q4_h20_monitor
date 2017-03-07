@@ -1,5 +1,9 @@
+/************************************/
+/**          chart.component.js    **/
+/************************************/
+
 (function() {
-    'use strict'
+    'use strict';
 
     angular.module('app')
         .component('zingChartView', {
@@ -10,9 +14,9 @@
             controller: controller
         });
 
-    controller.$inject = ['$http', '$interval'];
+    controller.$inject = ['$http', '$interval', '$scope'];
 
-    function controller($http, $interval) {
+    function controller($http, $interval, $scope) {
         const vm = this;
 
         vm.$onInit = onInit;
@@ -29,11 +33,27 @@
 		vm.createdDate = null;
 		vm.createdTime = null;
 
+		zingchart.THEME = "dark";
+		$scope.myJson = {
+			"type": "area",
+			"plot":{
+				"aspect":"spline"
+			},
+			"series": [
+				{"values":[]},
+				{"values":[]},
+				{"values":[]}
+			]
+		}
+		;
+
+
+
         // Funktioner
         vm.drawChart = drawChart;
         vm.parseReadingResponse = parseReadingResponse;
         vm.updateUI = updateUI;
-        vm.changeState = changeState;
+        vm.updateChart = updateChart;
 
         // TODO Setup 2-way binding between readings and component
         function onInit() {
@@ -45,12 +65,11 @@
 					parseReadingResponse(dataItemRead);
 				}, function errorCallback(response) {
 					console.log('Err: ', response.data)
-				}); // .catch(console.error);
-
-
+				});
+				// .catch(console.error);
                 // .then(response => vm.probeDataListing = response.data)
                 // .then(console.log('responseData: ', response.data))
-			$interval(updateUI, 5000);
+			$interval(updateChart, 5000);
         }
 
         function updateUI(){
@@ -65,6 +84,16 @@
 
         }
 
+
+        function updateChart(){
+			vm.ph = Math.floor((Math.random() * 120) + 1);
+			vm.ec = Math.floor((Math.random() * 200) + 1);
+			vm.do = Math.floor((Math.random() * 150) + 1);
+			console.log('$scope: ', $scope.myJson.series[0].values);
+			$scope.myJson.series[0].values.push(vm.ph);
+			$scope.myJson.series[1].values.push(vm.ec);
+			$scope.myJson.series[2].values.push(vm.ec);
+		}
 
         function parseReadingResponse(dataItemRead) {
             let timeStamp = new Date(); // Skapa faktisk tid nu
@@ -81,10 +110,6 @@
 			console.log('time: ', timeStamp.toLocaleTimeString('en-GB'));
         }
 
-
-        function changeState() {
-			go('probereadingsList', {stateParamKey: probereadingsList});
-		};
 
         function drawChart() {
             console.log('vm.probeDataListing', vm.probeDataListing);

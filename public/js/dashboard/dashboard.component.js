@@ -1,3 +1,6 @@
+/*********************************************/
+/**          dashboard.component.js         **/
+/*********************************************/
 (function() {
     'use strict'
 
@@ -30,16 +33,15 @@
 		vm.createdTime = null;
 
         // Funktioner
-        vm.drawChart = drawChart;
         vm.parseReadingResponse = parseReadingResponse;
         vm.updateUI = updateUI;
-        vm.changeState = changeState;
+        // vm.changeState = changeState;
 
         // TODO Setup 2-way binding between readings and component
         function onInit() {
             console.log("c:dashboard f:onInit")
             // $http.get('/probedata')
-            $http.get('http://10.9.13.51')
+            $http.get('http://192.168.86.135')
 				.then(function successCallback(response) {
                     let dataItemRead = response.data.variables;
 					parseReadingResponse(dataItemRead);
@@ -82,12 +84,9 @@
         }
 
 
-        function changeState() {
-			go('probereadingsList', {stateParamKey: probereadingsList});
-		};
+		// function changeState() {
+		// 	go('probereadingsList', {stateParamKey: probereadingsList});
+		// };
 
-        function drawChart() {
-            console.log('vm.probeDataListing', vm.probeDataListing);
-        }
     }
 }());
