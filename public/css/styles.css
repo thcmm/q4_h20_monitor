@@ -2,10 +2,6 @@ body {
     background-color: grey;
 }
 
-.row {
-
-}
-
 #dataItemContainer {
     margin-top: 2px;
     margin-bottom: 2px;
@@ -19,4 +15,14 @@ body {
 /* ZingChart */
 .zc-ref {
   display: none;
+}
+
+.myLogo {
+    padding-right: 1em;
+    width:120px;
+    height:50px;
+}
+
+.navbar-brand {
+
 }

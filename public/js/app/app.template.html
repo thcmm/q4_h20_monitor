@@ -1,11 +1,16 @@
-<nav class="navbar navbar-default">
-  <div class="container">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" ui-sref="home">TPS Q4 H2O Monitor</a>
+      <a class="navbar-brand" href="#">H2O Remoter Monitor</a>
     </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a ui-sref="dashboard-view">Dashboard</a></li>
+      <li><a ui-sref="probereadings-view">Data</a></li>       <!--href="#" | ui-sref="probereadingsList()"-->
+      <li><a href="#">Power</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <img class="img-responsive myLogo" src="/img/biorock-logo-small.png" alt="Biorock Technology">
+    </ul>
   </div>
 </nav>
 

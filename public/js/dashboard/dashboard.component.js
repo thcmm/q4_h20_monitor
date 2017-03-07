@@ -33,6 +33,7 @@
         vm.drawChart = drawChart;
         vm.parseReadingResponse = parseReadingResponse;
         vm.updateUI = updateUI;
+        vm.changeState = changeState;
 
         // TODO Setup 2-way binding between readings and component
         function onInit() {
@@ -79,6 +80,11 @@
 			console.log('date: ', createdDate);
 			console.log('time: ', timeStamp.toLocaleTimeString('en-GB'));
         }
+
+
+        function changeState() {
+			go('probereadingsList', {stateParamKey: probereadingsList});
+		};
 
         function drawChart() {
             console.log('vm.probeDataListing', vm.probeDataListing);

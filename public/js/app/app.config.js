@@ -8,7 +8,8 @@
 
   function config($stateProvider, $urlRouterProvider, $locationProvider, $qProvider){
 	$locationProvider.html5Mode(true)
-	$qProvider.errorOnUnhandledRejections(false);
+	$qProvider.errorOnUnhandledRejections(false); // Fix till unhandled exception err
+
 	$stateProvider
 	  .state({
 		name: 'app',
@@ -16,13 +17,13 @@
 		component: 'app',
 	  })
 	  .state({
-		name: 'home',
+		name: 'dashboard-view',
 		parent: 'app',
 		url: '/',
 		component: 'dashboard', // probereadingsList
 	  })
 	  .state({
-	   name: 'probereadingsView', // dashboardView'
+	   name: 'probereadings-view', // dashboardView'
 	   parent: 'app',
 	   url: '/',
 	   component: 'probereadingsList',
