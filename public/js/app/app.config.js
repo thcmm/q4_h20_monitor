@@ -28,5 +28,11 @@
 	   url: '/',
 	   component: 'probereadingsList',
 	 })
+		.state({
+			name: 'zingchart-view', // dashboardView'
+			parent: 'app',
+			url: '/',
+			component: 'zingChartView',
+		})
   }
 }());
