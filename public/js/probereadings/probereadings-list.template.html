@@ -10,13 +10,13 @@
 <div class="well well-lg" style="background: rgb(245,245,245);">   <!-- white smoke #F5F5F5-->
   <!-- Starta: kolumnrubriker  -->
   <div class="row well well-sm" style="font-weight: 900;background: rgb(176,196,222);">   <!-- light steel blue	#B0C4DE -->
-    <div class="col-md-1"><a ng-click="$ctrl.sortDataItems('id')">ID</a></div>
-    <div class="col-md-1"><a ng-click="$ctrl.sortDataItems('date')">Date</a></div>
-    <div class="col-md-2">PH</a></div>
-    <div class="col-md-2">ORP</div>
-    <div class="col-md-2">TEMP UW</a></div>
-    <div class="col-md-2">TEMP AMB</a></div>
-    <div class="col-md-2">HUMIDITY</a></div>
+    <div class="col-md-1 text-center"><a ng-click="$ctrl.sortDataItems('id')">ID</a></div>
+    <div class="col-md-2 text-left"><a ng-click="$ctrl.sortDataItems('date')">Date / Time</a></div>
+    <div class="col-md-1">PH</a></div>
+    <div class="col-md-1">ORP</div>
+    <div class="col-md-1">TEMP UW</a></div>
+    <div class="col-md-1">TEMP AMB</a></div>
+    <div class="col-md-1">HUMIDITY</a></div>
   </div>
   <!-- Slut kolumnrubriker -->
 
@@ -28,17 +28,17 @@
       <!--gainsboro	#DCDCDC	(220,220,220)-->
       <div class="col-md-1 dataItem"><span class="badge" style="background: rgb(220,220,220);"><a ui-sref="probereadingsDetail({id: dataItem.id})">{{dataItem.id}}</a></span></div>
       <!-- DATUM -->
-      <div class="col-md-1 dataItem">{{ dataItem.created_at | date:'medium'}}</div> <!-- TODO fixa datum formatering --> <!-- shortDate -->
+      <div class="col-md-2 dataItem">{{ dataItem.created_at | date:'M/d/yyyy HH:mm'}}</div> <!-- TODO fixa datum formatering --> <!-- shortDate -->
       <!-- PH -->
-      <div class="col-md-2 dataItem">{{dataItem.ph}}</div>
+      <div class="col-md-1 dataItem">{{dataItem.ph}}</div>
       <!-- ORP -->
-      <div class="col-md-2 dataItem">{{dataItem.orp}}</div>
+      <div class="col-md-1 dataItem">{{dataItem.orp}}</div>
       <!-- TEMPUW -->
-      <div class="col-md-2 dataItem">{{dataItem.tempuw}}</div>
+      <div class="col-md-1 dataItem">{{dataItem.tempuw}}</div>
       <!-- TEMPAMB -->
-      <div class="col-md-2 dataItem">{{dataItem.tempamb}}</div>
+      <div class="col-md-1 dataItem">{{dataItem.tempamb}}</div>
       <!-- HUMIDITY -->
-      <div class="col-md-2 dataItem">{{dataItem.humidity}}</div>
+      <div class="col-md-1 dataItem">{{dataItem.humidity}}</div>
     </div>
   </div>
 </div>
