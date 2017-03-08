@@ -5,168 +5,175 @@
 -->
 
 <div class="container-fluid">
-<h1>Dashboard:</h1>
+        <div class="row">
+            <!-- PH -->
+            <div class="col-sm-3 col-md-3">
+                <div class="thumbnail glass">
+                    <div class="caption text-center">
+                        <h3>PH</h3>
+                        <p class="widgetMainTextSize">{{$ctrl.ph}}</p>
+                    </div>
+                    <div class="row widgetSubTextSize">
+                        <div class="col-sm-4 col-md-6 text-left">
+                            <p>{{$ctrl.createdDate}}</p>
+                        </div>
+                        <div class="col-sm-4 col-md-6 text-right">
+                            <p>{{$ctrl.createdTime}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- EC -->
+            <div class="col-sm-3 col-md-3">
+                <div class="thumbnail glass">
+                    <div class="caption text-center">
+                        <h3>EC</h3>
+                        <p class="widgetMainTextSize">{{$ctrl.ec}}</p>
+                    </div>
+                    <div class="row widgetSubTextSize">
+                        <div class="col-sm-4 col-md-6 text-left">
+                            <p>{{$ctrl.createdDate}}</p>
+                        </div>
+                        <div class="col-sm-4 col-md-6 text-right">
+                            <p>{{$ctrl.createdTime}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- DO -->
+            <div class="col-sm-3 col-md-3">
+                <div class="thumbnail glass">
+                    <div class="caption text-center">
+                        <h3>DO</h3>
+                        <p class="widgetMainTextSize">{{$ctrl.do}}</p>
+                    </div>
+                    <div class="row widgetSubTextSize">
+                        <div class="col-sm-4 col-md-6 text-left">
+                            <p>{{$ctrl.createdDate}}</p>
+                        </div>
+                        <div class="col-sm-4 col-md-6 text-right">
+                            <p>{{$ctrl.createdTime}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ORP -->
+            <div class="col-sm-3 col-md-3">
+                <div class="thumbnail glass">
+                    <div class="caption text-center">
+                        <h3>ORP</h3>
+                        <p class="widgetMainTextSize">{{$ctrl.orp}}</p>
+                    </div>
+                    <div class="row widgetSubTextSize">
+                        <div class="col-sm-4 col-md-6 text-left">
+                            <p>{{$ctrl.createdDate}}</p>
+                        </div>
+                        <div class="col-sm-4 col-md-6 text-right">
+                            <p>{{$ctrl.createdTime}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- SLUT WIDGET ROW 1 -->
 
-<!-- ph | ec | do | orp | tempuw | tempamb | humidity | created_at -->
+        <!-- ***************************************************************** -->
+        <div class="row">  <!-- Börja WIDGET ROW 2 -->
+            <!-- TEMPUW -->
+            <div class="col-sm-3 col-md-3">
+                <div class="thumbnail glass">
+                    <div class="caption text-center">
+                        <h3>TEMPUW</h3>
+                        <p class="widgetMainTextSize">{{$ctrl.tempuw}}</p>
+                    </div>
+                    <div class="row widgetSubTextSize">
+                        <div class="col-sm-4 col-md-6 text-left">
+                            <p>{{$ctrl.createdDate}}</p>
+                        </div>
+                        <div class="col-sm-4 col-md-6 text-right">
+                            <p>{{$ctrl.createdTime}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- TEMPAMP -->
+            <div class="col-sm-3 col-md-3">
+                <div class="thumbnail glass">
+                    <div class="caption text-center">
+                        <h3>TEMPAMP</h3>
+                        <p class="widgetMainTextSize">{{$ctrl.tempamb}}</p>
+                    </div>
+                    <div class="row widgetSubTextSize">
+                        <div class="col-sm-4 col-md-6 text-left">
+                            <p>{{$ctrl.createdDate}}</p>
+                        </div>
+                        <div class="col-sm-4 col-md-6 text-right">
+                            <p>{{$ctrl.createdTime}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- HUMIDITY -->
+            <div class="col-sm-3 col-md-3">
+                <div class="thumbnail glass">
+                    <div class="caption text-center">
+                        <h3>HUMIDITY</h3>
+                        <p class="widgetMainTextSize">{{$ctrl.do}}</p>
+                    </div>
+                    <div class="row widgetSubTextSize">
+                        <div class="col-sm-4 col-md-6 text-left">
+                            <p>{{$ctrl.createdDate}}</p>
+                        </div>
+                        <div class="col-sm-4 col-md-6 text-right">
+                            <p>{{$ctrl.createdTime}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- LOCATION -->
+            <div class="col-sm-3 col-md-3">
+                <div class="thumbnail glass">
+                    <div class="caption text-center">
+                        <h3>LOC</h3>
+                        <p class="widgetMainTextSize">{{$ctrl.orp}}</p>
+                    </div>
+                    <div class="row widgetSubTextSize">
+                        <div class="col-sm-4 col-md-6 text-left">
+                            <p>{{$ctrl.createdDate}}</p>
+                        </div>
+                        <div class="col-sm-4 col-md-6 text-right">
+                            <p>{{$ctrl.createdTime}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- SLUT WIDGET ROW 2 -->
+        <!-- Börja Biorock TXT -->
+        <div class="row">
+            <div class="col-sm-2 col-md-2"></div>
+            <div class="col-sm-8 col-md-8" style="margin-top: 15px; margin-bottom: 15px;">
+                <h1 class="text-center">Biorock Structure Power Monitor</h1>
+            </div>
+            <div class="col-sm-2 col-md-2"></div>
+            <!-- Börja GAUGE ROW -->
+            <div class="row">
+                <!-- Börja WIDGET ROW 1 -->
+                <!--<div class="row"> &lt;!&ndash; Börja Mätare ROD 2 &ndash;&gt;-->
+                <div class="row">
+                    <div class="col-sm-4 col-md-6 dashboardGaugeRow">
+                        <div zingchart id='voltGauge' zc-json="$ctrl.volt" zc-width="100%" zc-height="400px"></div>
+                        <!-- 520 -->
+                    </div>
+                    <div class="col-sm-4 col-md-6 dashboardGaugeRow">
+                        <div zingchart id='ampGauge' zc-json="$ctrl.ampere" zc-width="100%" zc-height="400px"></div>
+                        <!-- 520 -->
+                    </div>
+                </div> <!-- SLUT Mätare ROD 2 -->
+                <!--</div>-->
+                <!-- SLUT GAUGE ROW -->
+        </div>
+        <!-- SLUT Biorock TXT -->
 
-
-  <!-- Börja WIDGET ROW 1 -->
-  <div class="row">
-    <!-- PH -->
-    <div class="col-sm-3 col-md-3">
-      <div class="thumbnail glass">
-        <div class="caption text-center">
-          <h3>PH</h3>
-          <p class="widgetMainTextSize">{{$ctrl.ph}}</p>
-        </div>
-        <div class="row widgetSubTextSize">
-          <div class="col-sm-4 col-md-6 text-left">
-            <p>{{$ctrl.createdDate}}</p>
-          </div>
-          <div class="col-sm-4 col-md-6 text-right">
-            <p>{{$ctrl.createdTime}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- EC -->
-    <div class="col-sm-3 col-md-3">
-      <div class="thumbnail glass">
-        <div class="caption text-center">
-          <h3>EC</h3>
-          <p class="widgetMainTextSize">{{$ctrl.ec}}</p>
-        </div>
-        <div class="row widgetSubTextSize">
-          <div class="col-sm-4 col-md-6 text-left">
-            <p>{{$ctrl.createdDate}}</p>
-          </div>
-          <div class="col-sm-4 col-md-6 text-right">
-            <p>{{$ctrl.createdTime}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- DO -->
-    <div class="col-sm-3 col-md-3">
-      <div class="thumbnail glass">
-        <div class="caption text-center">
-          <h3>DO</h3>
-          <p class="widgetMainTextSize">{{$ctrl.do}}</p>
-        </div>
-        <div class="row widgetSubTextSize">
-          <div class="col-sm-4 col-md-6 text-left">
-            <p>{{$ctrl.createdDate}}</p>
-          </div>
-          <div class="col-sm-4 col-md-6 text-right">
-            <p>{{$ctrl.createdTime}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- ORP -->
-    <div class="col-sm-3 col-md-3">
-      <div class="thumbnail glass">
-        <div class="caption text-center">
-          <h3>ORP</h3>
-          <p class="widgetMainTextSize">{{$ctrl.orp}}</p>
-        </div>
-        <div class="row widgetSubTextSize">
-          <div class="col-sm-4 col-md-6 text-left">
-            <p>{{$ctrl.createdDate}}</p>
-          </div>
-          <div class="col-sm-4 col-md-6 text-right">
-            <p>{{$ctrl.createdTime}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> <!-- SLUT WIDGET ROW 1 -->
-
-  <!-- ***************************************************************** -->
-  <div class="row">  <!-- Börja WIDGET ROW 2 -->
-    <!-- TEMPUW -->
-    <div class="col-sm-3 col-md-3">
-      <div class="thumbnail glass">
-        <div class="caption text-center">
-          <h3>TEMPUW</h3>
-          <p class="widgetMainTextSize">{{$ctrl.tempuw}}</p>
-        </div>
-        <div class="row widgetSubTextSize">
-          <div class="col-sm-4 col-md-6 text-left">
-            <p>{{$ctrl.createdDate}}</p>
-          </div>
-          <div class="col-sm-4 col-md-6 text-right">
-            <p>{{$ctrl.createdTime}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- TEMPAMP -->
-    <div class="col-sm-3 col-md-3">
-      <div class="thumbnail glass">
-        <div class="caption text-center">
-          <h3>TEMPAMP</h3>
-          <p class="widgetMainTextSize">{{$ctrl.tempamb}}</p>
-        </div>
-        <div class="row widgetSubTextSize">
-          <div class="col-sm-4 col-md-6 text-left">
-            <p>{{$ctrl.createdDate}}</p>
-          </div>
-          <div class="col-sm-4 col-md-6 text-right">
-            <p>{{$ctrl.createdTime}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- HUMIDITY -->
-    <div class="col-sm-3 col-md-3">
-      <div class="thumbnail glass">
-        <div class="caption text-center">
-          <h3>HUMIDITY</h3>
-          <p class="widgetMainTextSize">{{$ctrl.do}}</p>
-        </div>
-        <div class="row widgetSubTextSize">
-          <div class="col-sm-4 col-md-6 text-left">
-            <p>{{$ctrl.createdDate}}</p>
-          </div>
-          <div class="col-sm-4 col-md-6 text-right">
-            <p>{{$ctrl.createdTime}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- LOCATION -->
-    <div class="col-sm-3 col-md-3">
-      <div class="thumbnail glass">
-        <div class="caption text-center">
-          <h3>LOC</h3>
-          <p class="widgetMainTextSize">{{$ctrl.orp}}</p>
-        </div>
-        <div class="row widgetSubTextSize">
-          <div class="col-sm-4 col-md-6 text-left">
-            <p>{{$ctrl.createdDate}}</p>
-          </div>
-          <div class="col-sm-4 col-md-6 text-right">
-            <p>{{$ctrl.createdTime}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> <!-- SLUT WIDGET ROW 2 -->
-  <div class="row"> <!-- Börja Mätare ROD 2 -->
-    <div class="row">
-      <div class="col-sm-4 col-md-6">
-
-      </div>
-      <div class="col-sm-4 col-md-6">
-
-      </div>
-
-  </div> <!-- SLUT Mätare ROD 2 -->
-  <h2>ARV ONLINE INDICATOR</h2><h2>IP</h2><h2>INCOMING</h2><h2>SOMETHING</h2>
-  </div> <!-- SLUT CONTAINER -->
-
-
+    </div> <!-- SLUT CONTAINER -->
 
 
 
