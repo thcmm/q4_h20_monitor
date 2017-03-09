@@ -49,18 +49,18 @@
 
         // TODO Setup 2-way binding between readings and component
         function onInit() {
-            console.log("c:dashboard f:onInit")
-            // $http.get('/probedata')
-            // $http.get('http://192.168.86.137')
-				// .then(function successCallback(response) {
-            //         let dataItemRead = response.data.variables;
-				// 	parseReadingResponse(dataItemRead);
-				// }, function errorCallback(response) {
-				// 	console.log('Err: ', response.data)
-				// });
-			// $interval(updateUI, 5000);
-			$interval(getAPI, 5000);
-			//updateUI();
+            console.log("c:dashboard f:onInit");
+			$scope.$on("$destroy", function () {
+				console.log('Destroy');
+			});
+
+			console.log('Is Interval Running', vm.myInterval);
+			if (vm.myInterval) {
+				console.log('Clearing Interval');
+				$interval.cancel(vm.myInterval);
+			}
+
+			vm.myInterval = $interval(getAPI, 3000);
         }
 
 		function getAPI() {
@@ -344,3 +344,20 @@
 
     } // Slut Controller
 }());
+
+
+/* Gammalt onInit()
+ // console.log('Added Interval', vm.myInterval)
+
+ // $http.get('/probedata')
+ // $http.get('http://192.168.86.137')
+ // .then(function successCallback(response) {
+ //         let dataItemRead = response.data.variables;
+ // 	parseReadingResponse(dataItemRead);
+ // }, function errorCallback(response) {
+ // 	console.log('Err: ', response.data)
+ // });
+ // $interval(updateUI, 5000);
+
+ //updateUI();
+ */

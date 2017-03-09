@@ -34,7 +34,7 @@ setInterval(function getAvrValsTimer(){ // 10 sekunders fördröjning mellan fun
     reqpromise('http://10.9.13.51') // http://localhost:9000/probedata *** Måste uppdatera beroende på wifi-anslutning ***
         .then(function (avrRestRes) {
             let probeVals = JSON.parse(avrRestRes);
-            console.log('db: ', db);
+            //console.log('db: ', db);
             console.log("vals from node: ", probeVals.variables);
             writeTodB(probeVals);
         })

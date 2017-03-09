@@ -28,7 +28,7 @@ function showDbg() {
 
 router.get('/', (req, res, next) => {
     console.log('GET /');
-    knex.select('id', 'ph', 'ec', 'orp', 'tempuw', 'tempamb', 'humidity', 'created_at').from('probedata')
+    knex.select('id', 'ph', 'ec', 'orp', 'tempuw', 'tempamb', 'humidity', 'altitude', 'created_at').from('probedata')
         .then((probedata) => {
             if (!probedata) {
                 res.send("f(GET): Something cataclysmic may be afoot");
@@ -42,7 +42,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/:id', (req, res, next) => {
-    knex.select('id', 'ph', 'ec', 'orp', 'tempuw', 'tempamb', 'humidity', 'created_at').from('probedata')
+    knex.select('id', 'ph', 'ec', 'orp', 'tempuw', 'tempamb', 'humidity', 'altitude', 'created_at').from('probedata')
         .where('id', req.params.id)
         .first()
         .then((probedata) => {
@@ -66,7 +66,7 @@ router.post('/', (req, res, next) => {
             description: req.body.description,
             price: req.body.price,
             item_image: req.body.item_image
-        }, ['id', 'ph', 'ec', 'orp', 'tempuw', 'tempamb', 'humidity', 'created_at'])
+        }, ['id', 'ph', 'ec', 'orp', 'tempuw', 'tempamb', 'humidity', 'altitude', 'created_at'])
         .then((response) => {
             if (response[0] == undefined) {
                 showDbg("**** f(POST): Error with POST request ****");
@@ -127,7 +127,7 @@ router.patch('/:id', (req, res, next) => {
 
 // Radera rutt
 router.delete('/:id', function(req, res, next) {
-    knex.select('id', 'ph', 'ec', 'orp', 'tempuw', 'tempamb', 'humidity', 'created_at').from('probedata')
+    knex.select('id', 'ph', 'ec', 'orp', 'tempuw', 'tempamb', 'humidity', 'altitude', 'created_at').from('probedata')
         .where('id', req.params.id)
         .first()
         .then((probedata) => {

@@ -1,10 +1,10 @@
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('probedata').del()
     .then(function () {
       // Inserts seed entries
-      return knex('table_name').insert([
+      return knex('probedata').insert([
         {id: 1, colName: 'rowValue1'},
         {id: 2, colName: 'rowValue2'},
         {id: 3, colName: 'rowValue3'}
@@ -25,7 +25,8 @@ exports.seed = function(knex, Promise) {
                 tempuw: 80.98,
                 tempamb: 22.5,
                 humidity: 80.0,
-                created_at: new Date('2017-02-27T21:25:16.000Z')
+				altitude: 1530.0,
+                created_at: new Date('2017-03-09T21:25:16.000Z')
             });
         }).then(function () {
             return knex('probedata').insert({
@@ -36,7 +37,8 @@ exports.seed = function(knex, Promise) {
                 tempuw: 55.23,
                 tempamb: 18.5,
                 humidity: 90.0,
-                created_at: new Date('2017-02-27T21:26:16.000Z')
+				altitude: 1530.0,
+                created_at: new Date('2017-03-09T21:26:16.000Z')
             });
         }).then(function () {
             return knex('probedata').insert({
@@ -47,6 +49,7 @@ exports.seed = function(knex, Promise) {
                 tempuw: 80.98,
                 tempamb: 22.5,
                 humidity: 80.0,
+				altitude: 1520.0,
                 created_at: new Date('2017-02-27T21:27:16.000Z')
             });
         }).then(function () {
@@ -58,6 +61,7 @@ exports.seed = function(knex, Promise) {
                 tempuw: 80.98,
                 tempamb: 22.5,
                 humidity: 80.0,
+				altitude: 1590.0,
                 created_at: new Date('2017-02-27T21:28:16.000Z')
             });
         });

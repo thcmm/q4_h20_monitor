@@ -9,6 +9,7 @@ exports.up = function(knex, Promise) {
         table.decimal('tempuw').notNullable();
         table.decimal('tempamb').notNullable();
         table.decimal('humidity').notNullable();
+		table.decimal('altitude').notNullable();
         table.timestamp('created_at').defaultTo(knex.fn.now()).notNullable();
     })
   

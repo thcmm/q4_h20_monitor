@@ -71,7 +71,7 @@
 				$interval.cancel(vm.myInterval);
 			}
 
-			vm.myInterval = $interval(getAPI, 5000);
+			vm.myInterval = $interval(getAPI, 3000);
 			// console.log('Added Interval', vm.myInterval)
 
 		}
