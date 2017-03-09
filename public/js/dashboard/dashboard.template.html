@@ -82,7 +82,7 @@
             <div class="col-sm-3 col-md-3">
                 <div class="thumbnail glass">
                     <div class="caption text-center">
-                        <h3>TEMPUW</h3>
+                        <h3>Water Temp</h3>
                         <p class="widgetMainTextSize">{{$ctrl.tempuw}}</p>
                     </div>
                     <div class="row widgetSubTextSize">
@@ -99,7 +99,7 @@
             <div class="col-sm-3 col-md-3">
                 <div class="thumbnail glass">
                     <div class="caption text-center">
-                        <h3>TEMPAMP</h3>
+                        <h3>Air Temp</h3>
                         <p class="widgetMainTextSize">{{$ctrl.tempamb}}</p>
                     </div>
                     <div class="row widgetSubTextSize">
@@ -116,8 +116,8 @@
             <div class="col-sm-3 col-md-3">
                 <div class="thumbnail glass">
                     <div class="caption text-center">
-                        <h3>HUMIDITY</h3>
-                        <p class="widgetMainTextSize">{{$ctrl.do}}</p>
+                        <h3>Humidity</h3>
+                        <p class="widgetMainTextSize">{{$ctrl.humidity}}</p>
                     </div>
                     <div class="row widgetSubTextSize">
                         <div class="col-sm-4 col-md-6 text-left">
@@ -129,12 +129,12 @@
                     </div>
                 </div>
             </div>
-            <!-- LOCATION -->
+            <!-- ALTM -->
             <div class="col-sm-3 col-md-3">
                 <div class="thumbnail glass">
                     <div class="caption text-center">
-                        <h3>LOC</h3>
-                        <p class="widgetMainTextSize">{{$ctrl.orp}}</p>
+                        <h3>Altm</h3>
+                        <p class="widgetMainTextSize">{{$ctrl.altm}}</p>
                     </div>
                     <div class="row widgetSubTextSize">
                         <div class="col-sm-4 col-md-6 text-left">
@@ -160,11 +160,11 @@
                 <!--<div class="row"> &lt;!&ndash; Börja Mätare ROD 2 &ndash;&gt;-->
                 <div class="row">
                     <div class="col-sm-4 col-md-6 dashboardGaugeRow">
-                        <div zingchart id='voltGauge' zc-json="$ctrl.volt" zc-width="100%" zc-height="400px"></div>
+                        <div zingchart id='voltGauge' zc-json="$ctrl.voltChart" zc-width="100%" zc-height="400px"></div>
                         <!-- 520 -->
                     </div>
                     <div class="col-sm-4 col-md-6 dashboardGaugeRow">
-                        <div zingchart id='ampGauge' zc-json="$ctrl.ampere" zc-width="100%" zc-height="400px"></div>
+                        <div zingchart id='ampGauge' zc-json="$ctrl.ampereChart" zc-width="100%" zc-height="400px"></div>
                         <!-- 520 -->
                     </div>
                 </div> <!-- SLUT Mätare ROD 2 -->

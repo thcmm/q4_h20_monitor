@@ -4,12 +4,56 @@
 /**************************************/
 -->
 
-<div class="container-fluid">
-<h1>Charts:</h1>
-  <div zingchart id="chart-1" zc-json="$ctrl.myJson" zc-width="100%" zc-height="520px"></div>
-  <!--<div zingchart id='myChart' zc-json="$ctrl.myConfig" zc-width="100%" zc-height="520px"></div>-->
+<div class="container-fluid"> <!--Börja Kontainer-->
+    <!-- Börja Chart Row 1 -->
+    <div class="row">
+        <div class="col-sm-6 col-md-6">
+            <h2 class="text-center">PH</h2>
+            <div zingchart id="chart-1" zc-json="$ctrl.phChart" zc-width="100%" zc-height="300px"></div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+            <h2 class="text-center">EC</h2>
+            <div zingchart id="chart-2" zc-json="$ctrl.ecChart" zc-width="100%" zc-height="300px"></div>
+        </div>
+    </div>
+    <!-- Slut Chart Row 1 -->
+    <!-- Börja Chart Row 2 -->
+    <div class="row">
+        <div class="col-sm-6 col-md-6">
+            <h2 class="text-center">DO</h2>
+            <div zingchart id="chart-3" zc-json="$ctrl.doChart" zc-width="100%" zc-height="300px"></div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+            <h2 class="text-center">ORP</h2>
+            <div zingchart id="chart-4" zc-json="$ctrl.orpChart" zc-width="100%" zc-height="300px"></div>
+        </div>
+    </div>
+    <!-- Slut Chart Row 2 -->
+    <!-- Börja Chart Row 3 -->
+    <div class="row">
+        <div class="col-sm-6 col-md-6">
+            <h2 class="text-center">Water Temp</h2>
+            <div zingchart id="chart-5" zc-json="$ctrl.tempuwChart" zc-width="100%" zc-height="300px"></div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+            <h2 class="text-center">Air Temp</h2>
+            <div zingchart id="chart-6" zc-json="$ctrl.tempambChart" zc-width="100%" zc-height="300px"></div>
+        </div>
+    </div>
+    <!-- Slut Chart Row 3 -->
+    <!-- Börja Chart Row 4 -->
+    <div class="row">
+        <div class="col-sm-3 col-md-3"></div>
+        <div class="col-sm-6 col-md-6">
+            <h2 class="text-center">HUMIDITY</h2>
+            <div zingchart id="chart-7" zc-json="$ctrl.humidityChart" zc-width="100%" zc-height="300px"></div>
+        </div>
+        <div class="col-sm-3 col-md-3"></div>
+    </div>
+    <!-- Slut Chart Row 4 -->
 
-</div> <!-- END CONTAINER -->
+</div> <!-- Slut Kontainer -->
+
 
 
 

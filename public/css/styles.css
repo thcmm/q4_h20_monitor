@@ -81,6 +81,10 @@ body {
     padding: 1em;
 }
 
+
+
+
+
 /* Zing Chart */
 *{
     box-sizing: border-box;
@@ -90,6 +94,31 @@ body {
 .zc-ref {
     display: none;
 }
+
+#chart-1 {
+    border-radius: 8px;
+}
+
+#chart-2 {
+    border-radius: 8px;
+}
+
+#chart-3 {
+    border-radius: 8px;
+}
+
+#chart-4 {
+    border-radius: 8px;
+}
+
+#chart-5 {
+    border-radius: 8px;
+}
+
+#chart-6 {
+    border-radius: 8px;
+}
+
 
 .dashboardGaugeRow {
     margin-left: auto;

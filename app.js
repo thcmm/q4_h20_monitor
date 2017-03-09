@@ -4,6 +4,7 @@ const express = require('express');
 const path = require('path')
 const app = express();
 const bodyParser = require('body-parser');
+var db  = require('./knexdb');
 const request = require('request');
 var reqpromise = require('request-promise');
 
@@ -30,11 +31,12 @@ app.use(function(req, res, next) {
 
 // ***************************************************************************
 setInterval(function getAvrValsTimer(){ // 10 sekunders fördröjning mellan funktionsanrop
-    reqpromise('http://10.9.13.51') // *** Måste uppdatera beroende på wifi-anslutning ***
+    reqpromise('http://10.9.13.51') // http://localhost:9000/probedata *** Måste uppdatera beroende på wifi-anslutning ***
         .then(function (avrRestRes) {
             let probeVals = JSON.parse(avrRestRes);
-            console.log(probeVals.variables);
-            // writeTodB(probeVals);
+            console.log('db: ', db);
+            console.log("vals from node: ", probeVals.variables);
+            writeTodB(probeVals);
         })
         .catch(function (err) {
             // Skriv err till fil/db
@@ -46,10 +48,8 @@ setInterval(function getAvrValsTimer(){ // 10 sekunders fördröjning mellan fun
 // *** MAKES SINGLE INSTERT ***
 function writeTodB(probeVals) {
     var insertVars = probeVals.variables;
-    // console.log(insertVars);
-
-    db.insert(insertVars).into("probedata").then(function (id) {
-        console.log(id);
+    console.log('insertVars: ', insertVars);
+    db.insert(insertVars).into("probedata").then(function (id) {console.log("insertVars",id);
     })
         .finally(function() {
             // db.destroy();
